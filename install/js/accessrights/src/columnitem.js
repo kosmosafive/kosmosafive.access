@@ -93,5 +93,5 @@ export default class ColumnItem {
     }
 }
 
-const namespace = Reflection.namespace('BX.KosmosAccess.AccessRights');
+const namespace = Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
 namespace.ColumnItem = ColumnItem;

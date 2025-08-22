@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Component;
+namespace Kosmosafive\Component;
 
 use Bitrix\Main\GroupTable;
 use Bitrix\Main\HttpResponse;
@@ -40,7 +40,7 @@ class MainUISelectorComponentAjaxController extends \CMainUISelectorComponentAja
 
         $data['TABS']['groups'] = [
             'id' => 'groups',
-            'name' => Loc::getMessage('KOSMOS_MAIN_UI_SELECTOR_GROUPS'),
+            'name' => Loc::getMessage('KOSMOSAFIVE_MAIN_UI_SELECTOR_GROUPS'),
             'sort' => 100
         ];
 

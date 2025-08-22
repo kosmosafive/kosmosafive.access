@@ -352,5 +352,5 @@ export default class Section {
     }
 }
 
-const namespace = Reflection.namespace('BX.KosmosAccess.AccessRights');
+const namespace = Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
 namespace.Section = Section;

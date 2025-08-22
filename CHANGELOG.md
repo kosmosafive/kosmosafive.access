@@ -1,9 +1,5 @@
 # Changelog
 
-## 1.0.1 (2024-07-27)
+## 2.0.0 (2025-08-22)
 
-* license
-
-## 1.0.0 (2023-06-05)
-
-* release
+* namespace changed

@@ -11,9 +11,9 @@ use Bitrix\Main\UserFieldTable;
 
 Loc::loadMessages(__FILE__);
 
-class kosmos_access extends \CModule
+class kosmosafive_access extends \CModule
 {
-    public $MODULE_ID = 'kosmos.access';
+    public $MODULE_ID = 'kosmosafive.access';
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
@@ -30,10 +30,10 @@ class kosmos_access extends \CModule
             $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
         }
 
-        $this->MODULE_NAME = Loc::getMessage('KOSMOS_ACCESS_MODULE_NAME');
-        $this->MODULE_DESCRIPTION = Loc::getMessage('KOSMOS_ACCESS_MODULE_DESCRIPTION');
-        $this->PARTNER_NAME = Loc::getMessage('KOSMOS_ACCESS_PARTNER_NAME');
-        $this->PARTNER_URI = Loc::getMessage('KOSMOS_ACCESS_PARTNER_URI');
+        $this->MODULE_NAME = Loc::getMessage('KOSMOSAFIVE_ACCESS_MODULE_NAME');
+        $this->MODULE_DESCRIPTION = Loc::getMessage('KOSMOSAFIVE_ACCESS_MODULE_DESCRIPTION');
+        $this->PARTNER_NAME = Loc::getMessage('KOSMOSAFIVE_ACCESS_PARTNER_NAME');
+        $this->PARTNER_URI = Loc::getMessage('KOSMOSAFIVE_ACCESS_PARTNER_URI');
     }
 
     public function GetPath($notDocumentRoot = false): string
@@ -52,7 +52,7 @@ class kosmos_access extends \CModule
         global $APPLICATION;
 
         $APPLICATION->IncludeAdminFile(
-            Loc::getMessage('KOSMOS_ACCESS_INSTALL_TITLE'),
+            Loc::getMessage('KOSMOSAFIVE_ACCESS_INSTALL_TITLE'),
             $this->GetPath() . '/install/step.php'
         );
     }
@@ -75,14 +75,14 @@ class kosmos_access extends \CModule
 
         if ($step < 2) {
             $APPLICATION->IncludeAdminFile(
-                Loc::getMessage('KOSMOS_ACCESS_UNINSTALL_TITLE'),
+                Loc::getMessage('KOSMOSAFIVE_ACCESS_UNINSTALL_TITLE'),
                 $this->GetPath() . '/install/unstep1.php'
             );
         } elseif ($step === 2) {
             $this->DoUninstallSilent();
 
             $APPLICATION->IncludeAdminFile(
-                Loc::getMessage('KOSMOS_ACCESS_UNINSTALL_TITLE'),
+                Loc::getMessage('KOSMOSAFIVE_ACCESS_UNINSTALL_TITLE'),
                 $this->GetPath() . '/install/unstep2.php'
             );
         }

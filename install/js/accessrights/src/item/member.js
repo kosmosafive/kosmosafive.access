@@ -18,10 +18,10 @@ export default class Member extends Base {
     }
 
     bindEvents(): void {
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:addToAccessCodes', this.addToAccessCodes.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:removeFromAccessCodes', this.removeFromAccessCodes.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.resetNewMembers.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.resetNewMembers.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:addToAccessCodes', this.addToAccessCodes.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:removeFromAccessCodes', this.removeFromAccessCodes.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.resetNewMembers.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.resetNewMembers.bind(this));
     }
 
     getMember(): HTMLElement {

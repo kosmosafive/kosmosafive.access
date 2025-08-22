@@ -1,4 +1,4 @@
-# Kosmos: Права доступа
+# Права доступа
 
 ## Введение
 
@@ -59,12 +59,12 @@
 
 Каждый модуль должен хранить роли и права доступа в своих таблицах.
 
-*local/modules/kosmos.example/lib/Infrastructure/Model/ExamplePermissionTable.php*
+*local/modules/kosmosafive.example/lib/Infrastructure/Model/ExamplePermissionTable.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Infrastructure\Model;
+namespace Kosmosafive\Example\Infrastructure\Model;
 
 use Bitrix\Main\Access\Permission\AccessPermissionTable;
 
@@ -72,17 +72,17 @@ class ExamplePermissionTable extends AccessPermissionTable
 {
     public static function getTableName(): string
     {
-        return 'kosmos_example_permission';
+        return 'kosmosafive_example_permission';
     }
 }
 ```
 
-*local/modules/kosmos.example/lib/Infrastructure/Model/ExampleRoleTable.php*
+*local/modules/kosmosafive.example/lib/Infrastructure/Model/ExampleRoleTable.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Infrastructure\Model;
+namespace Kosmosafive\Example\Infrastructure\Model;
 
 use Bitrix\Main\Access\Role\AccessRoleTable;
 
@@ -90,17 +90,17 @@ class ExampleRoleTable extends AccessRoleTable
 {
     public static function getTableName(): string
     {
-        return 'kosmos_example_role';
+        return 'kosmosafive_example_role';
     }
 }
 ```
 
-*local/modules/kosmos.example/lib/Infrastructure/Model/ExampleRoleRelationTable.php*
+*local/modules/kosmosafive.example/lib/Infrastructure/Model/ExampleRoleRelationTable.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Infrastructure\Model;
+namespace Kosmosafive\Example\Infrastructure\Model;
 
 use Bitrix\Main\Access\Role\AccessRoleRelationTable;
 
@@ -108,7 +108,7 @@ class ExampleRoleRelationTable extends AccessRoleRelationTable
 {
     public static function getTableName(): string
     {
-        return 'kosmos_example_role_relation';
+        return 'kosmosafive_example_role_relation';
     }
 }
 ```
@@ -118,18 +118,18 @@ class ExampleRoleRelationTable extends AccessRoleRelationTable
 Предполагается, что будет существовать хотя бы один контроллер — контроллер модуля.
 В примере контроллер модуля отвечает и за ключевую сущность этого модуля.
 
-*local/modules/kosmos.example/lib/Domain/Access/ExampleAccessController.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/ExampleAccessController.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access;
+namespace Kosmosafive\Example\Domain\Access;
 
 use Bitrix\Main\Access\User\AccessibleUser;
 use Bitrix\Main\Access\AccessibleItem;
-use Kosmos\Example\Domain\Entity\Example;
-use Kosmos\Example\Domain\Entity\UserModel;
-use Kosmos\Access\AccessController;
+use Kosmosafive\Example\Domain\Entity\Example;
+use Kosmosafive\Example\Domain\Entity\UserModel;
+use Kosmosafive\Access\AccessController;
 
 class ExampleAccessController extends AccessController
 {
@@ -149,14 +149,14 @@ class ExampleAccessController extends AccessController
 
 В словаре перечисляются все возможные действия.
 
-*local/modules/kosmos.example/lib/Domain/Access/ActionDictionary.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/ActionDictionary.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access;
+namespace Kosmosafive\Example\Domain\Access;
 
-use Kosmos\Access\ActionDictionary as Base;
+use Kosmosafive\Access\ActionDictionary as Base;
 
 class ActionDictionary extends Base
 {
@@ -169,14 +169,14 @@ class ActionDictionary extends Base
 
 ### Словарь прав доступа
 
-*local/modules/kosmos.example/lib/Domain/Access/Permission/PermissionDictionary.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/Permission/PermissionDictionary.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access\Permission;
+namespace Kosmosafive\Example\Domain\Access\Permission;
 
-use Kosmos\Access\Permission\PermissionDictionary as Base;
+use Kosmosafive\Access\Permission\PermissionDictionary as Base;
 
 class PermissionDictionary extends Base
 {
@@ -190,12 +190,12 @@ class PermissionDictionary extends Base
 
 ### Словарь ролей
 
-*local/modules/kosmos.example/lib/Domain/Access/Role/RoleDictionary.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/Role/RoleDictionary.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access\Role;
+namespace Kosmosafive\Example\Domain\Access\Role;
 
 use Bitrix\Main\Access\Role\RoleDictionary as Base;
 
@@ -209,16 +209,16 @@ class RoleDictionary extends Base
 
 ### Утилиты прав доступа
 
-*local/modules/kosmos.example/lib/Domain/Access/Role/RoleUtil.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/Role/RoleUtil.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access\Role;
+namespace Kosmosafive\Example\Domain\Access\Role;
 
-use Kosmos\Core\ORM\Model\UserGroupTable;
-use Kosmos\Example\Infrastructure\Model;
-use Kosmos\Access\Role\RoleUtil as Base;
+use Kosmosafive\Core\ORM\Model\UserGroupTable;
+use Kosmosafive\Example\Infrastructure\Model;
+use Kosmosafive\Access\Role\RoleUtil as Base;
 
 class RoleUtil extends Base
 {
@@ -268,16 +268,16 @@ class RoleUtil extends Base
 
 Каждое правило описывается в отдельном файле.
 
-*local/modules/kosmos.example/lib/Domain/Access/Rule/CreateRule.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/Rule/CreateRule.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access\Rule;
+namespace Kosmosafive\Example\Domain\Access\Rule;
 
 use Bitrix\Main\Access\AccessibleItem;
 use Bitrix\Main\Access\Rule\AbstractRule;
-use Kosmos\Example\Domain\Access\Permission\PermissionDictionary;
+use Kosmosafive\Example\Domain\Access\Permission\PermissionDictionary;
 
 class CreateRule extends AbstractRule
 {
@@ -298,18 +298,18 @@ class CreateRule extends AbstractRule
 
 ### Конфигурация для вывода интерфейса
 
-*local/modules/kosmos.example/lib/Domain/Access/Component/ExampleConfigPermissions.php*
+*local/modules/kosmosafive.example/lib/Domain/Access/Component/ExampleConfigPermissions.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Access\Component;
+namespace Kosmosafive\Example\Domain\Access\Component;
 
-use Kosmos\Example\Domain\Access\ActionDictionary;
-use Kosmos\Example\Domain\Access\Permission\PermissionDictionary;
-use Kosmos\Example\Domain\Access\Role\RoleUtil;
-use Kosmos\Example\Domain\Access\ExampleAccessController;
-use Kosmos\Access\Component\ConfigPermissions;
+use Kosmosafive\Example\Domain\Access\ActionDictionary;
+use Kosmosafive\Example\Domain\Access\Permission\PermissionDictionary;
+use Kosmosafive\Example\Domain\Access\Role\RoleUtil;
+use Kosmosafive\Example\Domain\Access\ExampleAccessController;
+use Kosmosafive\Access\Component\ConfigPermissions;
 
 class ExampleConfigPermissions extends ConfigPermissions
 {
@@ -351,7 +351,7 @@ class ExampleConfigPermissions extends ConfigPermissions
      */
     public static function getModuleId(): string
     {
-        return 'kosmos.example';
+        return 'kosmosafive.example';
     }
 
     /**
@@ -374,16 +374,16 @@ class ExampleConfigPermissions extends ConfigPermissions
 
 ### Модель пользователя
 
-*local/modules/kosmos.example/lib/Domain/Entity/UserModel.php*
+*local/modules/kosmosafive.example/lib/Domain/Entity/UserModel.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Entity;
+namespace Kosmosafive\Example\Domain\Entity;
 
-use Kosmos\Example\Infrastructure\Model\ExamplePermissionTable;
-use Kosmos\Example\Infrastructure\Model\ExampleRoleRelationTable;
-use Kosmos\Access\Entity\UserModel as Base;
+use Kosmosafive\Example\Infrastructure\Model\ExamplePermissionTable;
+use Kosmosafive\Example\Infrastructure\Model\ExampleRoleRelationTable;
+use Kosmosafive\Access\Entity\UserModel as Base;
 
 class UserModel extends Base
 {
@@ -403,15 +403,15 @@ class UserModel extends Base
 
 Модель сущности может отсутствовать.
 
-*local/modules/kosmos.example/lib/Domain/Entity/Example.php*
+*local/modules/kosmosafive.example/lib/Domain/Entity/Example.php*
 
 ```php
 <?php
 
-namespace Kosmos\Example\Domain\Entity;
+namespace Kosmosafive\Example\Domain\Entity;
 
 use Bitrix\Main\Access\AccessibleItem;
-use Kosmos\Example\Infrastructure\Model;
+use Kosmosafive\Example\Infrastructure\Model;
 
 class Example extends Model\EO_Example implements AccessibleItem
 {
@@ -430,7 +430,7 @@ class Example extends Model\EO_Example implements AccessibleItem
 ### Страница настроек
 
 Для добавления пункта меню, ссылающегося на страницу, можно воспользоваться файлом
-local/modules/kosmos.example/admin/menu.php.
+local/modules/kosmosafive.example/admin/menu.php.
 Заголовок и ссылка могут быть получены программно.
 
 ```php
@@ -446,8 +446,8 @@ local/modules/kosmos.example/admin/menu.php.
 ### Проверка возможности совершения действия
 
 ```php
-use Kosmos\Example\Domain\Access\ActionDictionary;
-use Kosmos\Example\Domain\Access\ExampleAccessController;
+use Kosmosafive\Example\Domain\Access\ActionDictionary;
+use Kosmosafive\Example\Domain\Access\ExampleAccessController;
 
 ExampleAccessController::can(
     $userId,
@@ -459,8 +459,8 @@ ExampleAccessController::can(
 При необходимости можно явно передать сущность в контроллер.
 
 ```php
-use Kosmos\Example\Domain\Access\ActionDictionary;
-use Kosmos\Example\Domain\Access\ExampleAccessController;
+use Kosmosafive\Example\Domain\Access\ActionDictionary;
+use Kosmosafive\Example\Domain\Access\ExampleAccessController;
 
 ExampleAccessController::can(
     $userId,
@@ -473,8 +473,12 @@ ExampleAccessController::can(
 ### Список идентификаторов пользователей, имеющих определенное право
 
 ```php
-use Kosmos\Example\Domain\Access\Role\RoleUtil;
-use Kosmos\Example\Domain\Access\Permission\PermissionDictionary;
+use Kosmosafive\Example\Domain\Access\Role\RoleUtil;
+use Kosmosafive\Example\Domain\Access\Permission\PermissionDictionary;
 
 $userIdList = RoleUtil::getMembersByPermission(PermissionDictionary::EXAMPLE_CREATE)
 ```
+
+## Миграция
+
+* [Миграция с 1.x на 2.0](doc/migration/2.0.md)

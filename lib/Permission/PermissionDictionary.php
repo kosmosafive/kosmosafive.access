@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access\Permission;
+namespace Kosmosafive\Access\Permission;
 
 use Bitrix\Main\Access\Permission\PermissionDictionary as Base;
 
