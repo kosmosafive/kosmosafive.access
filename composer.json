@@ -1,8 +1,8 @@
 {
-  "name": "kosmosafive/kosmos.access",
-  "description": "Kosmos: Права доступа",
+  "name": "kosmosafive/kosmosafive.access",
+  "description": "Права доступа",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/kosmosafive/kosmos.access",
+  "homepage": "https://github.com/kosmosafive/kosmosafive.access",
   "type": "bitrix-d7-module",
   "minimum-stability": "stable",
   "keywords": [
@@ -16,7 +16,7 @@
       "name": "Siarhei Buinevich",
       "email": "a5-kosmos@yandex.ru",
       "homepage": "https://t.me/kosmosafive",
-      "role": "Developer"
+      "role": "Author"
     }
   ],
   "require": {
@@ -25,6 +25,12 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.86"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

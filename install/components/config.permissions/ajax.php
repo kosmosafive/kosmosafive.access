@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Component;
+namespace Kosmosafive\Component;
 
 use Bitrix\Main\Engine\CurrentUser;
 use Bitrix\Main\Access\Exception\AccessException;
@@ -18,7 +18,7 @@ use Bitrix\Main\Text\Encoding;
 use Bitrix\Main\HttpResponse;
 use Bitrix\Main\Engine\Response;
 use Bitrix\Main\Request;
-use Kosmos\Access\Component\ConfigPermissionsInterface;
+use Kosmosafive\Access\Component\ConfigPermissionsInterface;
 use ReflectionClass;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {

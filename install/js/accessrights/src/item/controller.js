@@ -38,7 +38,7 @@ export default class Controller extends Base {
 			`;
 
             Event.bind(this.controllerLink, 'click', () => {
-                EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:addRole', [
+                EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', [
                     {
                         id: '0',
                         title: Loc.getMessage('JS_UI_ACCESSRIGHTS_ROLE_NAME'),
@@ -49,13 +49,13 @@ export default class Controller extends Base {
                     }
                 ]);
 
-                EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
+                EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
 
                 this.toggleControllerMenu();
                 this.grid.lock();
             });
 
-            EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.toggleControllerMenu.bind(this));
+            EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.toggleControllerMenu.bind(this));
         }
 
         return this.controller;
@@ -77,7 +77,7 @@ export default class Controller extends Base {
                         const accessCodesCopy = Object.assign([], data.accessCodes);
 
                         EventEmitter.emit(
-                            'BX.KosmosAccess.AccessRights.ColumnItem:copyRole',
+                            'BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole',
                             [{
                                 id: '0',
                                 title: Loc.getMessage('JS_UI_ACCESSRIGHTS_ROLE_NAME'),
@@ -88,7 +88,7 @@ export default class Controller extends Base {
                             }]
                         );
 
-                        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
+                        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
                         this.popupMenu.destroy();
                     }
                 });

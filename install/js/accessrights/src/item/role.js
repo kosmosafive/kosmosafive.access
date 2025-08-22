@@ -38,8 +38,8 @@ export default class Role extends Base {
             return this.role;
         }
 
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:preservation', this.updateRole.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:preservation', this.offRoleEditMode.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:preservation', this.updateRole.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:preservation', this.offRoleEditMode.bind(this));
 
         this.roleInput = Tag.render`
 				<input
@@ -118,7 +118,7 @@ export default class Role extends Base {
                     events: {
                         click: () => {
                             this.popupConfirm.close();
-                            EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this);
+                            EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this);
                         }
                     }
                 }),
@@ -146,7 +146,7 @@ export default class Role extends Base {
         this.userGroup = this.column.getUserGroup();
 
         this.roleValue.innerText = this.roleInput.value;
-        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:updateRole', this);
+        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:updateRole', this);
     }
 
     offRoleEditMode(): void {

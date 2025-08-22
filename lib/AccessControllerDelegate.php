@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access;
+namespace Kosmosafive\Access;
 
 use Bitrix\Main\Access\AccessibleController;
 use RuntimeException;

@@ -1,1 +1,5 @@
 /.idea
+/bitrix
+/.php_cs.cache
+/vendor
+/composer.lock

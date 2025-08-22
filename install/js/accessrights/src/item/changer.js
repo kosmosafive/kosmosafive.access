@@ -19,8 +19,8 @@ export default class Changer extends Base {
     }
 
     bindEvents(): void {
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.offChanger.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refreshStatus.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.offChanger.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refreshStatus.bind(this));
     }
 
     refreshStatus(): void {

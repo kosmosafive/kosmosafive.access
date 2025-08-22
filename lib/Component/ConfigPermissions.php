@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access\Component;
+namespace Kosmosafive\Access\Component;
 
 use Bitrix\Main\Engine\Response\Converter;
 use Bitrix\Main\Localization\Loc;
@@ -124,7 +124,7 @@ abstract class ConfigPermissions implements ConfigPermissionsInterface
 
     public static function getTitle(): string
     {
-        return Loc::getMessage('KOSMOS_ACCESS_CONFIG_PERMISSION_TITLE');
+        return Loc::getMessage('KOSMOSAFIVE_ACCESS_CONFIG_PERMISSION_TITLE');
     }
 
     public static function getUri(): string

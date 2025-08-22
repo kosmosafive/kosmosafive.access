@@ -39,8 +39,8 @@ export default class MultiSelector extends Changer {
     }
 
     bindEvents() {
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.reset.bind(this));
-        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refresh.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.reset.bind(this));
+        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refresh.bind(this));
     }
 
     createSelector(): Dialog {
@@ -181,7 +181,7 @@ export default class MultiSelector extends Changer {
 
         this.render();
 
-        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
-        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this);
+        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
+        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this);
     }
 }
