@@ -189,7 +189,7 @@ export default class Column {
                 Dom.addClass('ui-access-rights-column-new', this.layout.container)
             }
 
-            EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.resetClassNew.bind(this));
+            EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.resetClassNew.bind(this));
 
             Dom.append(itemsFragment, this.layout.container);
 
@@ -198,5 +198,5 @@ export default class Column {
     }
 }
 
-const namespace = Reflection.namespace('BX.KosmosAccess.AccessRights');
+const namespace = Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
 namespace.Column = Column;

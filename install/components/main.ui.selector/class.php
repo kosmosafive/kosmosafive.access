@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Component;
+namespace Kosmosafive\Component;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();

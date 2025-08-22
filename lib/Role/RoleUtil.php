@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access\Role;
+namespace Kosmosafive\Access\Role;
 
 use Bitrix\Main\Access\Role\RoleUtil as Base;
 use Bitrix\Main\Localization\Loc;
@@ -15,12 +15,12 @@ abstract class RoleUtil extends Base
 
     protected static function getRoleRelationTableClass(): string
     {
-        new RuntimeException(Loc::getMessage('KOSMOS_ACCESS_ROLE_UTIL_ERROR_ROLE_RELATION_TABLE_CLASS'));
+        new RuntimeException(Loc::getMessage('KOSMOSAFIVE_ACCESS_ROLE_UTIL_ERROR_ROLE_RELATION_TABLE_CLASS'));
     }
 
     protected static function getPermissionTableClass(): string
     {
-        new RuntimeException(Loc::getMessage('KOSMOS_ACCESS_ROLE_UTIL_ERROR_PERMISSION_TABLE_CLASS'));
+        new RuntimeException(Loc::getMessage('KOSMOSAFIVE_ACCESS_ROLE_UTIL_ERROR_PERMISSION_TABLE_CLASS'));
     }
 
     protected static function getUserGroupTableClass(): string

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access;
+namespace Kosmosafive\Access;
 
 abstract class ActionDictionary
 {

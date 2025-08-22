@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access\Entity;
+namespace Kosmosafive\Access\Entity;
 
 use Bitrix\Main\Access\User\UserModel as Base;
 use Bitrix\Main\ArgumentException;

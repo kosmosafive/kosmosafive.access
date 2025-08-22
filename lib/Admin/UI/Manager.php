@@ -1,12 +1,12 @@
 <?php
 
-namespace Kosmos\Access\Admin\UI;
+namespace Kosmosafive\Access\Admin\UI;
 
 use Bitrix\Main\Context;
 use Bitrix\Main\Engine\CurrentUser;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Request;
-use Kosmos\Access\Component\ConfigPermissionsInterface;
+use Kosmosafive\Access\Component\ConfigPermissionsInterface;
 
 class Manager
 {

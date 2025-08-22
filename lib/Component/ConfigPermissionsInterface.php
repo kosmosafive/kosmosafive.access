@@ -1,6 +1,6 @@
 <?php
 
-namespace Kosmos\Access\Component;
+namespace Kosmosafive\Access\Component;
 
 interface ConfigPermissionsInterface
 {

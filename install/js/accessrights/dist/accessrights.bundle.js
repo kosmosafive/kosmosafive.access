@@ -42,17 +42,17 @@ this.BX = this.BX || {};
         babelHelpers.createClass(Grid, [{
             key: "bindEvents",
             value: function bindEvents() {
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:updateRole', this.updateRole.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this.updateAccessVariationRight.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:accessOn', this.updateAccessRight.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:accessOff', this.updateAccessRight.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:update', this.adjustButtonPanel.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:addRole', this.addUserGroup.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:addRole', this.addRoleColumn.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:copyRole', this.addRoleColumn.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:copyRole', this.addUserGroup.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.removeRoleColumn.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.adjustButtonPanel.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:updateRole', this.updateRole.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this.updateAccessVariationRight.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOn', this.updateAccessRight.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOff', this.updateAccessRight.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this.adjustButtonPanel.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', this.addUserGroup.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', this.addRoleColumn.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole', this.addRoleColumn.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole', this.addUserGroup.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.removeRoleColumn.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.adjustButtonPanel.bind(this));
                 main_core_events.EventEmitter.subscribe('BX.Main.SelectorV2:onGetEntityTypes', this.onGetEntityTypes.bind(this));
             }
         }, {
@@ -68,12 +68,12 @@ this.BX = this.BX || {};
         }, {
             key: "fireEventReset",
             value: function fireEventReset() {
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights:reset', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:reset', this);
             }
         }, {
             key: "fireEventRefresh",
             value: function fireEventRefresh() {
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights:refresh', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:refresh', this);
             }
         }, {
             key: "getButtonPanel",
@@ -148,7 +148,7 @@ this.BX = this.BX || {};
                     var waitContainer = _this.buttonPanel.getContainer().querySelector('.ui-btn-wait');
                     main_core.Dom.removeClass(waitContainer, 'ui-btn-wait');
                 });
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights:preservation', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:preservation', this);
             }
         }, {
             key: "lock",
@@ -450,7 +450,7 @@ this.BX = this.BX || {};
                     return;
                 }
                 if (params.state === 'select') {
-                    main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights:addToAccessCodes', option);
+                    main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:addToAccessCodes', option);
                 }
             }
         }, {
@@ -460,7 +460,7 @@ this.BX = this.BX || {};
                 if (!option) {
                     return;
                 }
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights:removeFromAccessCodes', option);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:removeFromAccessCodes', option);
             }
         }, {
             key: "onGetEntityTypes",
@@ -504,7 +504,7 @@ this.BX = this.BX || {};
     babelHelpers.defineProperty(Grid, "ACTION_DELETE", 'delete');
     babelHelpers.defineProperty(Grid, "ACTION_LOAD", 'load');
     babelHelpers.defineProperty(Grid, "MODE", 'ajax');
-    var namespace = main_core.Reflection.namespace('BX.KosmosAccess');
+    var namespace = main_core.Reflection.namespace('BX.KosmosafiveAccess');
     namespace.AccessRights = Grid;
 
     var _templateObject$1;
@@ -663,10 +663,10 @@ this.BX = this.BX || {};
         babelHelpers.createClass(Member, [{
             key: "bindEvents",
             value: function bindEvents() {
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:addToAccessCodes', this.addToAccessCodes.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:removeFromAccessCodes', this.removeFromAccessCodes.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.resetNewMembers.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.resetNewMembers.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:addToAccessCodes', this.addToAccessCodes.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:removeFromAccessCodes', this.removeFromAccessCodes.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.resetNewMembers.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.resetNewMembers.bind(this));
             }
         }, {
             key: "getMember",
@@ -1033,8 +1033,8 @@ this.BX = this.BX || {};
                 if (this.role) {
                     return this.role;
                 }
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:preservation', this.updateRole.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:preservation', this.offRoleEditMode.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:preservation', this.updateRole.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:preservation', this.offRoleEditMode.bind(this));
                 this.roleInput = main_core.Tag.render(_templateObject$5 || (_templateObject$5 = babelHelpers.taggedTemplateLiteral(["\n\t\t\t\t<input\n\t\t\t\t\ttype='text'\n\t\t\t\t\tclass='ui-access-rights-role-input'\n\t\t\t\t\tvalue='", "'\n\t\t\t\t\tplaceholder='", "'\n\t\t\t\t/>\n\t\t\t"])), main_core.Text.encode(this.text), main_core.Loc.getMessage('JS_UI_ACCESSRIGHTS_ROLE_NAME'));
                 main_core.Event.bind(this.roleInput, 'keydown', function (event) {
                     if (event.keyCode === 13) {
@@ -1084,7 +1084,7 @@ this.BX = this.BX || {};
                         events: {
                             click: function click() {
                                 _this4.popupConfirm.close();
-                                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', _this4);
+                                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', _this4);
                             }
                         }
                     }), new BX.UI.Button({
@@ -1108,7 +1108,7 @@ this.BX = this.BX || {};
                 this.text = this.roleInput.value;
                 this.userGroup = this.column.getUserGroup();
                 this.roleValue.innerText = this.roleInput.value;
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:updateRole', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:updateRole', this);
             }
         }, {
             key: "offRoleEditMode",
@@ -1143,8 +1143,8 @@ this.BX = this.BX || {};
         }, {
             key: "bindEvents",
             value: function bindEvents() {
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.offChanger.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refreshStatus.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.offChanger.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refreshStatus.bind(this));
             }
         }, {
             key: "refreshStatus",
@@ -1183,14 +1183,14 @@ this.BX = this.BX || {};
                 checked: _this.currentValue === '1',
                 handlers: {
                     checked: function checked() {
-                        main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:accessOn', babelHelpers.assertThisInitialized(_this));
+                        main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOn', babelHelpers.assertThisInitialized(_this));
                     },
                     unchecked: function unchecked() {
-                        main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:accessOff', babelHelpers.assertThisInitialized(_this));
+                        main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOff', babelHelpers.assertThisInitialized(_this));
                     },
                     toggled: function toggled() {
                         _this.adjustChanger();
-                        main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', babelHelpers.assertThisInitialized(_this));
+                        main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', babelHelpers.assertThisInitialized(_this));
                     }
                 }
             });
@@ -1242,7 +1242,7 @@ this.BX = this.BX || {};
                     this.toggleControllerMenu();
                     this.controller = main_core.Tag.render(_templateObject3$2 || (_templateObject3$2 = babelHelpers.taggedTemplateLiteral(["\n\t\t\t\t<div class='ui-access-rights-column-item-controller'>\n\t\t\t\t\t", "\n\t\t\t\t\t", "\n\t\t\t\t</div>\n\t\t\t"])), this.controllerLink, this.controllerMenu);
                     main_core.Event.bind(this.controllerLink, 'click', function () {
-                        main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:addRole', [{
+                        main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', [{
                             id: '0',
                             title: main_core.Loc.getMessage('JS_UI_ACCESSRIGHTS_ROLE_NAME'),
                             accessRights: [],
@@ -1250,11 +1250,11 @@ this.BX = this.BX || {};
                             accessCodes: [],
                             type: Role.TYPE
                         }]);
-                        main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', _this);
+                        main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', _this);
                         _this.toggleControllerMenu();
                         _this.grid.lock();
                     });
-                    main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.toggleControllerMenu.bind(this));
+                    main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.toggleControllerMenu.bind(this));
                 }
                 return this.controller;
             }
@@ -1272,7 +1272,7 @@ this.BX = this.BX || {};
                         onclick: function onclick() {
                             var accessRightsCopy = Object.assign([], data.accessRights);
                             var accessCodesCopy = Object.assign([], data.accessCodes);
-                            main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:copyRole', [{
+                            main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole', [{
                                 id: '0',
                                 title: main_core.Loc.getMessage('JS_UI_ACCESSRIGHTS_ROLE_NAME'),
                                 accessRights: accessRightsCopy,
@@ -1280,7 +1280,7 @@ this.BX = this.BX || {};
                                 type: Role.TYPE,
                                 members: data.members
                             }]);
-                            main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', _this2);
+                            main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', _this2);
                             _this2.popupMenu.destroy();
                         }
                     });
@@ -1323,8 +1323,8 @@ this.BX = this.BX || {};
         babelHelpers.createClass(VariableSelector, [{
             key: "bindEvents",
             value: function bindEvents() {
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.reset.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refresh.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.reset.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refresh.bind(this));
             }
         }, {
             key: "render",
@@ -1393,8 +1393,8 @@ this.BX = this.BX || {};
                 this.getChanger().innerHTML = '';
                 this.render();
                 this.adjustChanger();
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this);
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
             }
         }]);
         return VariableSelector;
@@ -1515,8 +1515,8 @@ this.BX = this.BX || {};
         babelHelpers.createClass(MultiSelector, [{
             key: "bindEvents",
             value: function bindEvents() {
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.reset.bind(this));
-                main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refresh.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.reset.bind(this));
+                main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refresh.bind(this));
             }
         }, {
             key: "createSelector",
@@ -1641,8 +1641,8 @@ this.BX = this.BX || {};
                     this.adjustChanger();
                 }
                 this.render();
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
-                main_core_events.EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
+                main_core_events.EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this);
             }
         }]);
         return MultiSelector;
@@ -1729,7 +1729,7 @@ this.BX = this.BX || {};
         }]);
         return ColumnItem;
     }();
-    var namespace$1 = main_core.Reflection.namespace('BX.KosmosAccess.AccessRights');
+    var namespace$1 = main_core.Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
     namespace$1.ColumnItem = ColumnItem;
 
     var _templateObject$d;
@@ -1879,7 +1879,7 @@ this.BX = this.BX || {};
                     if (this.newColumn) {
                         main_core.Dom.addClass('ui-access-rights-column-new', this.layout.container);
                     }
-                    main_core_events.EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.resetClassNew.bind(this));
+                    main_core_events.EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.resetClassNew.bind(this));
                     main_core.Dom.append(itemsFragment, this.layout.container);
                     return this.layout.container;
                 }
@@ -1887,7 +1887,7 @@ this.BX = this.BX || {};
         }]);
         return Column;
     }();
-    var namespace$2 = main_core.Reflection.namespace('BX.KosmosAccess.AccessRights');
+    var namespace$2 = main_core.Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
     namespace$2.Column = Column;
 
     var _templateObject$e, _templateObject2$5, _templateObject3$4, _templateObject4$2, _templateObject5$2,
@@ -2181,7 +2181,7 @@ this.BX = this.BX || {};
         }]);
         return Section;
     }();
-    var namespace$3 = main_core.Reflection.namespace('BX.KosmosAccess.AccessRights');
+    var namespace$3 = main_core.Reflection.namespace('BX.KosmosafiveAccess.AccessRights');
     namespace$3.Section = Section;
 
     exports.Grid = Grid;
@@ -2189,5 +2189,5 @@ this.BX = this.BX || {};
     exports.Column = Column;
     exports.ColumnItem = ColumnItem;
 
-}((this.BX.KosmosAccess = this.BX.KosmosAccess || {}), BX, BX, BX.UI, BX.Main, BX.Event, BX.UI.EntitySelector, BX));
+}((this.BX.KosmosafiveAccess = this.BX.KosmosafiveAccess || {}), BX, BX, BX.UI, BX.Main, BX.Event, BX.UI.EntitySelector, BX));
 //# sourceMappingURL=accessrights.bundle.js.map

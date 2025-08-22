@@ -1,12 +1,12 @@
 <?php
 
-namespace Kosmos\Component;
+namespace Kosmosafive\Component;
 
 use Bitrix\Location\Exception\RuntimeException;
 use Bitrix\Main\Engine\CurrentUser;
 use Bitrix\Main\Engine\Response\Converter;
 use Bitrix\Main\Localization\Loc;
-use Kosmos\Access\Component\ConfigPermissionsInterface;
+use Kosmosafive\Access\Component\ConfigPermissionsInterface;
 use ReflectionClass;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
@@ -22,7 +22,7 @@ class ConfigPermissions extends \CBitrixComponent
     public function onPrepareComponentParams($arParams): array
     {
         if (!class_exists($arParams['CONFIG'])) {
-            new RuntimeException(Loc::getMessage('KOSMOS_CONFIG_PERMISSIONS_ERROR_CONFIG'));
+            new RuntimeException(Loc::getMessage('KOSMOSAFIVE_CONFIG_PERMISSIONS_ERROR_CONFIG'));
         }
 
         return $arParams;
@@ -52,7 +52,7 @@ class ConfigPermissions extends \CBitrixComponent
 
         $currentUser = CurrentUser::get();
         if (!$accessControllerClass::can($currentUser->getId(), $actionDictionaryClass::ACTION_ADMIN)) {
-            ShowError(Loc::getMessage('KOSMOS_CONFIG_PERMISSIONS_ERROR_ACCESS_DENIED'));
+            ShowError(Loc::getMessage('KOSMOSAFIVE_CONFIG_PERMISSIONS_ERROR_ACCESS_DENIED'));
             return;
         }
 

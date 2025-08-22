@@ -4,9 +4,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_ad
 
 use Bitrix\Main\Context;
 use Bitrix\Main\Loader;
-use Kosmos\Access\Admin\UI\Manager;
+use Kosmosafive\Access\Admin\UI\Manager;
 
-Loader::includeModule('kosmos.access');
+Loader::includeModule('kosmosafive.access');
 
 $request = Context::getCurrent()->getRequest();
 
