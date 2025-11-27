@@ -67,17 +67,17 @@ export default class Grid {
     }
 
     bindEvents(): void {
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:updateRole', this.updateRole.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this.updateAccessVariationRight.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOn', this.updateAccessRight.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOff', this.updateAccessRight.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this.adjustButtonPanel.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', this.addUserGroup.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:addRole', this.addRoleColumn.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole', this.addRoleColumn.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:copyRole', this.addUserGroup.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.removeRoleColumn.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights.ColumnItem:removeRole', this.adjustButtonPanel.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:updateRole', this.updateRole.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this.updateAccessVariationRight.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:accessOn', this.updateAccessRight.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:accessOff', this.updateAccessRight.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:update', this.adjustButtonPanel.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:addRole', this.addUserGroup.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:addRole', this.addRoleColumn.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:copyRole', this.addRoleColumn.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:copyRole', this.addUserGroup.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.removeRoleColumn.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights.ColumnItem:removeRole', this.adjustButtonPanel.bind(this));
         EventEmitter.subscribe('BX.Main.SelectorV2:onGetEntityTypes', this.onGetEntityTypes.bind(this));
     }
 
@@ -91,11 +91,11 @@ export default class Grid {
     }
 
     fireEventReset(): void {
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:reset', this);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights:reset', this);
     }
 
     fireEventRefresh(): void {
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:refresh', this);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights:refresh', this);
     }
 
     getButtonPanel(): BX.UI.ButtonPanel {
@@ -183,7 +183,7 @@ export default class Grid {
             }
         );
 
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:preservation', this);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights:preservation', this);
     }
 
     lock(): void {
@@ -520,7 +520,7 @@ export default class Grid {
         }
 
         if (params.state === 'select') {
-            EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:addToAccessCodes', option);
+            EventEmitter.emit('BX.KosmosAccess.AccessRights:addToAccessCodes', option);
         }
     }
 
@@ -531,7 +531,7 @@ export default class Grid {
             return;
         }
 
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights:removeFromAccessCodes', option);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights:removeFromAccessCodes', option);
     }
 
     onGetEntityTypes(): void {
@@ -580,5 +580,5 @@ export default class Grid {
     }
 }
 
-const namespace = Reflection.namespace('BX.KosmosafiveAccess');
+const namespace = Reflection.namespace('BX.KosmosAccess');
 namespace.AccessRights = Grid;

@@ -23,8 +23,8 @@ export default class VariableSelector extends Changer {
     }
 
     bindEvents() {
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:reset', this.reset.bind(this));
-        EventEmitter.subscribe('BX.KosmosafiveAccess.AccessRights:refresh', this.refresh.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:reset', this.reset.bind(this));
+        EventEmitter.subscribe('BX.KosmosAccess.AccessRights:refresh', this.refresh.bind(this));
     }
 
     render(): HTMLElement {
@@ -102,7 +102,7 @@ export default class VariableSelector extends Changer {
         this.render();
         this.adjustChanger();
 
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:selectAccessItems', this);
-        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:selectAccessItems', this);
+        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
     }
 }
