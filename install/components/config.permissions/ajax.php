@@ -114,7 +114,7 @@ class ConfigPermissionsAjaxController extends Controller
     {
         $params = $this->getUnsignedParameters();
 
-        foreach (['kosmos.access', $params['MODULE_ID']] as $moduleId) {
+        foreach (['kosmosafive.access', $params['MODULE_ID']] as $moduleId) {
             if (!Loader::includeModule($moduleId)) {
                 $this->errorCollection[] = new Error(
                     Loc::getMessage(
