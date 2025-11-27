@@ -16,14 +16,14 @@ export default class Toggler extends Changer {
                 checked: this.currentValue === '1',
                 handlers: {
                     checked: () => {
-                        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOn', this);
+                        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:accessOn', this);
                     },
                     unchecked: () => {
-                        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:accessOff', this);
+                        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:accessOff', this);
                     },
                     toggled: () => {
                         this.adjustChanger();
-                        EventEmitter.emit('BX.KosmosafiveAccess.AccessRights.ColumnItem:update', this);
+                        EventEmitter.emit('BX.KosmosAccess.AccessRights.ColumnItem:update', this);
                     }
                 }
             }
