@@ -129,7 +129,7 @@ abstract class ConfigPermissions implements ConfigPermissionsInterface
 
     public static function getUri(): string
     {
-        $uri = new Uri(BX_ROOT . '/admin/kosmos.access_router.php');
+        $uri = new Uri(BX_ROOT . '/admin/kosmosafive.access_router.php');
         $uri->addParams(
             [
                 'moduleId' => static::getModuleId(),
